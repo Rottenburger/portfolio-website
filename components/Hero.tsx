@@ -1,3 +1,5 @@
+import { FaLocationArrow } from 'react-icons/fa'
+import LitUpButton from './ui/LitUpButton'
 import { Spotlight } from './ui/Spotlight'
 import { TextGenerateEffect } from './ui/TextGenerateEffect'
 
@@ -31,6 +33,14 @@ const Hero = () => {
           className='text-center text-[40px] md:text-5xl lg:text-6xl'
           words='This is my personal portfolio website create using NextJS, Shadcn and Aceternity UI'
           />
+
+          <a href='#about'>
+            <LitUpButton
+            title="My work"
+            icon={<FaLocationArrow />}
+            position='right'
+            />
+          </a>
         </div>
         </div>
       </div>
