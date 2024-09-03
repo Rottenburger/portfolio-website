@@ -1,4 +1,5 @@
 import { Spotlight } from './ui/Spotlight'
+import { TextGenerateEffect } from './ui/TextGenerateEffect'
 
 const Hero = () => {
   return (
@@ -23,8 +24,13 @@ const Hero = () => {
         lg:max-w-[60vw] flex flex-col items-center justify-center'>
           <h2 className='uppercase tracking-widest
           text-xs text-center text-blue-100 max-w-80'>
-            Web page with NextJS
+            Hi My name is Thomas Roethenbaugh!
           </h2>
+
+          <TextGenerateEffect 
+          className='text-center text-[40px] md:text-5xl lg:text-6xl'
+          words='This is my personal portfolio website create using NextJS, Shadcn and Aceternity UI'
+          />
         </div>
         </div>
       </div>
