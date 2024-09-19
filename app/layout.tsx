@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <link rel="icon" href="static/images/mainicon.jpg" sizes="any" />
         <ThemeProvider
             attribute="class"
             defaultTheme="system"
