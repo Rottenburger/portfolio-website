@@ -1,11 +1,12 @@
-## Overview
+# Overview
 
 This is a simple portfolio website using NextJS and TailwindCSS that I have created to show off my skills and experience. Hope you find it interesting! :D
 
 ## Features
 
-* A list of my work experience
-* A list of my skills
+* My work experience
+* My skills
+* My personal projects
 * Links to my GitHub & LinkedIn
 
 ## Project Structure
@@ -30,3 +31,7 @@ The project is structured as follows:
 * `tailwind.config.ts`: This is the tailwind configuration file.
 * `next.config.mjs`: This is the next configuration file.
 * `postcss.config.mjs`: This is the postcss configuration file.
+
+## Hosting / DevOps
+
+This website is built using Vercel's front-end deployment framework

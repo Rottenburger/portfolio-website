@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { LucideIcon, Sparkles, Zap, Flame, Laugh, Music, Palette } from "lucide-react"
+import { LucideIcon, Sparkles, Zap, Flame, Laugh, Music, Palette, Braces, Footprints } from "lucide-react"
 import Image from "next/image"
 
 interface BentoCardProps {
@@ -87,8 +87,12 @@ export function AnimatedImageBentoGridComponent() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         <BentoCard
           title="IT Analyst at G-Research"
-          description="In this role I worked for 14 months as an IT Analyst at G-Research's 1 Soho Place office, providing first, second and thrid-line support as well as assisting seinor members of the team in IT Engineering projects and Cyber security operations.
-          Technologies I worked with: Active Directory, VMWare, Citrix, Mimecast, CyberArk, FIDO and many others"
+          description="My industrial year placement provided me with an exceptional experience in systems administration, IT support and cyber security operations. I used a vast array of different technologies, 
+          including PowerShell, Mimecast, CyberArk, VMWare, Citrix and Cisco Meraki to name a few. During the second half of my placement I worked under a senior IT engineer completing engineering project tickets. This 
+          included an automated checking system for new joiners of the company to ensure that their accounts and storage were setup correctly. I also spent time learning Linux system administration/engineering 
+          to gain more understanding about the operating system as I had very little experience with it before joining G-Research. During a re-structuring while at G-Research, I was given more responsibility for 
+          the cyber-security operations at the company. Handling email releases, download requests as well as working with the security investigation team when an account had been compromised/labelled as suspicious.
+"
           icon={Sparkles}
           className="md:col-span-2"
           imageUrl="/static/images/soho.PNG?height=160&width=320"
@@ -100,29 +104,30 @@ export function AnimatedImageBentoGridComponent() {
           imageUrl="/static/images/outlinewales.jpg?height=160&width=160"
         />
         <BentoCard
-          title="Trending Now"
-          description="Stay ahead of the curve with access to hottest features and latest trends in industry."
+          title="General Assistant at Sainsbury's"
+          description="My part-time role varied as I gained experience. It started with stacking shelves but by the end of my time there I was trained in all but one department. Allowing me to work flexibly around my manager’s needs for that day. Some days I would even organise less experienced colleges across both the food and backdoor departments. The role gave me a great deal of experience on how to handle customer demands as well as solve problems on my own."
           icon={Flame}
-          imageUrl="/placeholder.svg?height=160&width=160"
+          imageUrl="/static/images/sainsburys-logo-png-transparent.png?height=160&width=160"
         />
         <BentoCard
-          title="Fun and Engaging"
-          description="Enjoy a delightful and interactive user experience that keeps you coming back for more."
+          title="Chess Tutor Group Project"
+          description="During my second-year as a computer science student I worked as the QA manager for our chess tutor project, the code was worked on GitLab as requested by our professor but the code is now hosted here - https://github.com/biy11/chess_tutor
+          Tech stack - Java, JavaFX, JUnit, CSS"
           icon={Laugh}
           className="md:col-span-2"
-          imageUrl="/placeholder.svg?height=160&width=320"
+          imageUrl="/static/images/main_menu_background.jpg?height=160&width=320"
         />
         <BentoCard
-          title="Harmonious Design"
-          description="Immerse yourself in a beautifully crafted interface that balances aesthetics and functionality."
-          icon={Music}
+          title="Game Development"
+          description="I am currently improving my C# and Unity skills in order to create an sell my own video game on both Steam and the Google Play store."
+          icon={Braces}
         />
         <BentoCard
-          title="Customizable Themes"
-          description="Personalize your experience with our flexible theming options. Tailor the look and feel to match unique style preferences."
-          icon={Palette}
+          title="AberHike Commitee"
+          description="On top of my coding/IT skills, I am also the secretary of my university's hiking club. Leading sometimes as many as 25 people up and down the mountains of Wales, ensuring both their safety and enjoyment. As well as leading hikes I also take care of regular secretary duties such as meeting minutues and organising events."
+          icon={Footprints}
           className="md:col-span-2"
-          imageUrl="/placeholder.svg?height=160&width=320"
+          imageUrl="/static/images/aberhike.png?height=160&width=320"
         />
       </div>
     </div>
