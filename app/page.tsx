@@ -1,5 +1,6 @@
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
+import { SkillsAndLinks } from "@/components/skills-and-links";
 import Image from "next/image";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <div className="max-w-7xl w-full">
         <Hero />
         <Grid />
+        <SkillsAndLinks />
       </div>
     </main></>
   );
