@@ -1,3 +1,4 @@
+import { AnimatedImageBentoGridComponent } from "@/components/animated-image-bento-grid";
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import { SkillsAndLinks } from "@/components/skills-and-links";
@@ -10,7 +11,7 @@ export default function Home() {
     mx-auto sm:px-10 px-5">
       <div className="max-w-7xl w-full">
         <Hero />
-        <Grid />
+        <AnimatedImageBentoGridComponent />
         <SkillsAndLinks />
       </div>
     </main></>

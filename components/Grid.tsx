@@ -12,6 +12,7 @@ const Grid = () => {
                 key={item.id}
                 title={item.title}
                 description={item.description}
+                image={item.img}
                 />
             ))}
         </BentoGrid>

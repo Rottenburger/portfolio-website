@@ -9,11 +9,11 @@ export const navItems = [
     {
       id: 1,
       title: "Work experience",
-      description: "",
+      description: "I have worked as and IT Analyst at G-Research and a UX/UI Researcher at Outline Wales.",
       className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
       imgClassName: "w-full h-full",
       titleClassName: "justify-end",
-      img: "/b1.svg",
+      img: "./soho.svg",
       spareImg: "",
     },
     {
