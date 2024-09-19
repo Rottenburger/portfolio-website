@@ -83,18 +83,19 @@ const BentoCard = ({ title, description, icon: Icon, className, imageUrl }: Bent
 export function AnimatedImageBentoGridComponent() {
   return (
     <div className="container mx-auto p-8 bg-gray-900 min-h-screen">
-      <h2 className="text-4xl font-bold mb-12 text-center text-gray-100">Work Experience</h2>
+      <h2 className="text-4xl font-bold mb-12 text-center text-gray-100">Work Experience / Personal Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         <BentoCard
           title="IT Analyst at G-Research"
-          description="In this role I worked for 14 months as an IT Analyst, providing first, second and thrid-line support as well as asisting seinor members of the team in IT Engineering projects and Cyber security operations"
+          description="In this role I worked for 14 months as an IT Analyst at G-Research's 1 Soho Place office, providing first, second and thrid-line support as well as assisting seinor members of the team in IT Engineering projects and Cyber security operations.
+          Technologies I worked with: Active Directory, VMWare, Citrix, Mimecast, CyberArk, FIDO and many others"
           icon={Sparkles}
           className="md:col-span-2"
           imageUrl="/static/images/soho.PNG?height=160&width=320"
         />
         <BentoCard
-          title="Lightning Fast"
-          description="Experience unparalleled speed and efficiency with our optimized performance responsive design."
+          title="UX/UI Researcher at Outline Wales"
+          description="In this role I worked for a startup collecting user experience data for an AR phone application. I personally completed 10 user tests/interviews and compiled the data for our CEO to gain insights about the app."
           icon={Zap}
           imageUrl="/static/images/outlinewales.jpg?height=160&width=160"
         />
