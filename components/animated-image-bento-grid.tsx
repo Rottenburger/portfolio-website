@@ -82,7 +82,7 @@ const BentoCard = ({ title, description, icon: Icon, className, imageUrl }: Bent
 
 export function AnimatedImageBentoGridComponent() {
   return (
-    <div className="container mx-auto p-8 bg-gray-900 min-h-screen">
+    <div id="work-experience" className="container mx-auto p-8 bg-gray-900 min-h-screen">
       <h2 className="text-4xl font-bold mb-12 text-center text-gray-100">Work Experience / Personal Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         <BentoCard

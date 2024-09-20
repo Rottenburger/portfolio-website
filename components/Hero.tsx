@@ -34,7 +34,7 @@ const Hero = () => {
           words='This is my personal portfolio website create using NextJS, Shadcn and Aceternity UI'
           />
 
-          <a href='#about'>
+          <a href='#work-experience'>
             <LitUpButton
             title="My work"
             icon={<FaLocationArrow />}

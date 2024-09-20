@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Thomas Roethenbaugh's portfolio website",
-  description: "A stylish portfolio website created using NextJS",
+  description: "Hello person/bot looking at my code for this website, thank you for checking it out! :P",
 };
 
 export default function RootLayout({
@@ -21,7 +21,8 @@ export default function RootLayout({
         <link rel="icon" href="static/images/mainicon.jpg" sizes="any" />
         <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="dark"
+            forcedTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
