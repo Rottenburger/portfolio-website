@@ -1,6 +1,6 @@
 "'use client'"
 
-import { Github, Linkedin } from "lucide-react"
+import { Github, Linkedin, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function SkillsAndLinks() {
@@ -23,17 +23,13 @@ export function SkillsAndLinks() {
             <Github className="mr-2 h-4 w-4" />
             GitHub
           </a>
-          <a href="https://www.linkedin.com/in/thomas-roethenbaugh-712b61149/theme: {
-            container: {
-              center: true,
-              padding: '2rem',
-              screens: {
-                '2xl': '1400px'
-              }
-            },
-          }" target="_blank" rel="noopener noreferrer" className="bg-gray-800 text-white hover:bg-gray-700 px-4 py-2 rounded-md">
+          <a href="https://www.linkedin.com/in/thomas-roethenbaugh-712b61149/" target="_blank" rel="noopener noreferrer" className="bg-gray-800 text-white hover:bg-gray-700 px-4 py-2 rounded-md">
             <Linkedin className="mr-2 h-4 w-4" />
             LinkedIn
+          </a>
+          <a href="https://www.instagram.com/thomasroethenbaugh/" target="_blank" rel="noopener noreferrer" className="bg-gray-800 text-white hover:bg-gray-700 px-4 py-2 rounded-md">
+            <Instagram className="mr-2 h-4 w-4" />
+            Instagram
           </a>
         </div>
       </section>
