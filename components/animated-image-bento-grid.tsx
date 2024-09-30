@@ -112,7 +112,7 @@ export function AnimatedImageBentoGridComponent() {
         <BentoCard
           title="Chess Tutor Group Project"
           description="During my second-year as a computer science student I worked as the QA manager for our chess tutor project, the code was worked on GitLab as requested by our professor but the code is now hosted here - https://github.com/biy11/chess_tutor
-          Tech stack - Java, JavaFX, JUnit, CSS"
+          Tech stack - Java, JavaFX, JUnit, CSS. My role not only involved both setting the teams targets and planning sprints week by week. But I also spent a lot of my time creating unit tests for any new features added by the team and making sure any bugs or problems that came up were dealt with quickly so it did not affect the rest of devlopment."
           icon={Laugh}
           className="md:col-span-2"
           imageUrl="/static/images/main_menu_background.jpg?height=160&width=320"
