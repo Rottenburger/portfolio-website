@@ -112,14 +112,14 @@ export function AnimatedImageBentoGridComponent() {
         <BentoCard
           title="Chess Tutor Group Project"
           description="During my second-year as a computer science student I worked as the QA manager for our chess tutor project, the code was worked on GitLab as requested by our professor but the code is now hosted here - https://github.com/biy11/chess_tutor
-          Tech stack - Java, JavaFX, JUnit, CSS. My role not only involved both setting the teams targets and planning sprints week by week. But I also spent a lot of my time creating unit tests for any new features added by the team and making sure any bugs or problems that came up were dealt with quickly so it did not affect the rest of devlopment."
+          Tech stack - Java, JavaFX, JUnit, CSS. My role not only involved both setting the teams targets and planning sprints week by week. But I also spent a lot of my time creating unit tests for any new features added by the team and making sure any bugs or problems that came up were dealt with quickly so it did not affect the rest of development."
           icon={Laugh}
           className="md:col-span-2"
           imageUrl="/static/images/main_menu_background.jpg?height=160&width=320"
         />
         <BentoCard
           title="Game Development"
-          description="I am currently improving my C# and Unity skills in order to create an sell my own video game on both Steam and the Google Play store."
+          description="I am currently improving my C# and Unity game engine skills in order to create and sell my own video game on both Steam and the Google Play store. I am also using this to learn more about programing in general, specifically mobile/DOT Net development. "
           icon={Braces}
         />
         <BentoCard
