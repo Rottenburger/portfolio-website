@@ -26,7 +26,7 @@ const Hero = () => {
         lg:max-w-[60vw] flex flex-col items-center justify-center'>
           <h2 className='uppercase tracking-widest
           text-xs text-center text-blue-100 max-w-80'>
-            Hi My name is Thomas Roethenbaugh!
+            Hi, My name is Thomas Roethenbaugh!
           </h2>
 
           <TextGenerateEffect 
