@@ -8,7 +8,7 @@ export function SkillsAndLinks() {
       <section className="mb-12">
         <h2 className="text-2xl font-bold mb-4 text-white">Skills</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {["NextJS", "React", "TypeScript", "Tailwind CSS", "Linux", "Windows", "IT Infastructure", "Python", "Cyber-Security Operations"].map((skill) => (
+          {["NextJS", "React", "TypeScript", "Tailwind CSS", "Linux", "Kotlin", "Infastructure Engineering", "Python", "Cyber-Security Operations"].map((skill) => (
             <div key={skill} className="bg-gray-800 rounded-lg p-3 text-center text-white">
               {skill}
             </div>

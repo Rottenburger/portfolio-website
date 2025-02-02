@@ -118,8 +118,8 @@ export function AnimatedImageBentoGridComponent() {
           imageUrl="/static/images/main_menu_background.jpg?height=160&width=320"
         />
         <BentoCard
-          title="Game Development"
-          description="I am currently improving my C# and Unity game engine skills in order to create and sell my own video game on both Steam and the Google Play store. I am also using this to learn more about programing in general, specifically mobile/DOT Net development. "
+          title="Android mobile development"
+          description="One of my university projects during my final year was a questionare app for Android. I used Android studio and Kotlin for its development, you ca find the code for this project on my GitHub here - https://github.com/Rottenburger/questionapp"
           icon={Braces}
         />
         <BentoCard
