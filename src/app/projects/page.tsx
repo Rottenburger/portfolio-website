@@ -1,7 +1,6 @@
 "use client"
 
-import Link from "next/link"
-import { ArrowUpRight, ExternalLink, Github } from "lucide-react"
+import { ExternalLink, Github } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 
 const projects = [
@@ -93,115 +92,127 @@ export default function ProjectsPage() {
 
           {/* Bento Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[200px]">
-            {projects.map((project) => (
-              <div
-                key={project.id}
-                className={`group relative overflow-hidden rounded-2xl bg-white border border-gray-200 hover:border-gray-300 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 ${getCardClasses(project.size)}`}
-              >
-                {/* Background Gradient */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
-                />
-
-                {/* Content */}
-                <div className="relative h-full p-6 flex flex-col justify-between">
-                  {/* Header */}
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="inline-block px-2 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-medium">
-                        {project.category}
-                      </span>
-                      {project.featured && (
-                        <span className="inline-block px-2 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-medium">
-                          Featured
+            {projects.map((project) => {
+              const mainLink = project.github || project.demo || null;
+              const cardContent = (
+                <>
+                  {/* Background Gradient */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 dark:from-slate-800 dark:to-slate-900`}
+                  />
+                  {/* Content */}
+                  <div className="relative h-full p-6 flex flex-col justify-between">
+                    {/* Header */}
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="inline-block px-2 py-1 rounded-full bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300 text-xs font-medium">
+                          {project.category}
                         </span>
-                      )}
-                    </div>
-
-                    <h3
-                      className={`font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors ${
-                        project.size === "large"
-                          ? "text-2xl"
-                          : project.size === "medium" || project.size === "wide"
+                        {project.featured && (
+                          <span className="inline-block px-2 py-1 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs font-medium">
+                            Featured
+                          </span>
+                        )}
+                      </div>
+                      <h3
+                        className={`font-bold text-gray-900 dark:text-white mb-3 group-hover:text-purple-600 transition-colors ${
+                          project.size === "large"
+                            ? "text-2xl"
+                            : project.size === "medium" || project.size === "wide"
                             ? "text-xl"
                             : "text-lg"
-                      }`}
-                    >
-                      {project.title}
-                    </h3>
-
-                    <p
-                      className={`text-gray-600 leading-relaxed ${
-                        project.size === "small" ? "text-sm line-clamp-2" : "line-clamp-3"
-                      }`}
-                    >
-                      {project.description}
-                    </p>
-
-                    {/* Tech Stack */}
-                    {(project.size === "large" || project.size === "medium" || project.size === "wide") && (
-                      <div className="flex flex-wrap gap-1 mt-4">
-                        {project.tech.slice(0, 3).map((tech) => (
-                          <span key={tech} className="px-2 py-1 rounded-md bg-gray-50 text-gray-600 text-xs font-medium">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Footer */}
-                  <div className="mt-6">
-                    {/* Action Buttons */}
-                    <div className={`flex gap-2 ${project.size === "large" ? "flex-row" : "flex-col"}`}>
-                      <Link
-                        href={project.link}
-                        className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-purple-600 text-white font-medium hover:bg-purple-700 transition-colors text-sm group/btn"
+                        }`}
                       >
-                        View Details
-                        <ArrowUpRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                      </Link>
-
-                      {/* Secondary Actions */}
-                      {(project.github || project.demo) && (
-                        <div className="flex gap-2">
-                          {project.github && (
-                            <a
-                              href={project.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center justify-center px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors text-sm"
-                              aria-label={`View ${project.title} on GitHub`}
-                            >
-                              <Github className="w-4 h-4" />
-                            </a>
-                          )}
-                          {project.demo && (
-                            <a
-                              href={project.demo}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center justify-center px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors text-sm"
-                              aria-label={`View ${project.title} demo`}
-                            >
-                              <ExternalLink className="w-4 h-4" />
-                            </a>
-                          )}
+                        {project.title}
+                      </h3>
+                      <p
+                        className={`text-gray-600 dark:text-gray-300 leading-relaxed ${
+                          project.size === "small" ? "text-sm line-clamp-2" : "line-clamp-3"
+                        }`}
+                      >
+                        {project.description}
+                      </p>
+                      {/* Tech Stack */}
+                      {(project.size === "large" || project.size === "medium" || project.size === "wide") && (
+                        <div className="flex flex-wrap gap-1 mt-4">
+                          {project.tech.slice(0, 3).map((tech) => (
+                            <span key={tech} className="px-2 py-1 rounded-md bg-gray-50 dark:bg-slate-700 text-gray-600 dark:text-gray-300 text-xs font-medium">
+                              {tech}
+                            </span>
+                          ))}
                         </div>
                       )}
                     </div>
+                    {/* Footer */}
+                    <div className="mt-6">
+                      {/* Action Buttons */}
+                      <div className={`flex gap-2 ${project.size === "large" ? "flex-row" : "flex-col"}`}>
+                        {/* Only render action buttons as links if the card is not a link itself */}
+                        {!mainLink && (project.github || project.demo) && (
+                          <div className="flex gap-2">
+                            {project.github && (
+                              <a
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors text-sm"
+                                aria-label={`View ${project.title} on GitHub`}
+                              >
+                                <Github className="w-4 h-4" />
+                              </a>
+                            )}
+                            {project.demo && (
+                              <a
+                                href={project.demo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors text-sm"
+                                aria-label={`View ${project.title} demo`}
+                              >
+                                <ExternalLink className="w-4 h-4" />
+                              </a>
+                            )}
+                          </div>
+                        )}
+                        {/* If the card is a link, just show icons (not links) for visual consistency */}
+                        {mainLink && (project.github || project.demo) && (
+                          <div className="flex gap-2 opacity-70">
+                            {project.github && <Github className="w-4 h-4" aria-label="GitHub" />}
+                            {project.demo && <ExternalLink className="w-4 h-4" aria-label="Demo" />}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                    {/* Hover Effect Overlay */}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`}
+                    />
                   </div>
-
-                  {/* Hover Effect Overlay */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`}
-                  />
+                  {/* Interactive Border Effect */}
+                  <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-purple-200 dark:group-hover:border-purple-800 transition-colors duration-300" />
+                </>
+              );
+              return mainLink ? (
+                <a
+                  key={project.id}
+                  href={mainLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 hover:border-gray-300 dark:hover:border-slate-500 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 ${getCardClasses(project.size)}`}
+                  tabIndex={0}
+                  aria-label={`Open ${project.title} on GitHub`}
+                >
+                  {cardContent}
+                </a>
+              ) : (
+                <div
+                  key={project.id}
+                  className={`group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 hover:border-gray-300 dark:hover:border-slate-500 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 ${getCardClasses(project.size)}`}
+                >
+                  {cardContent}
                 </div>
-
-                {/* Interactive Border Effect */}
-                <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-purple-200 transition-colors duration-300" />
-              </div>
-            ))}
+              );
+            })}
           </div>
         </main>
       </div>

@@ -190,12 +190,10 @@ export default function Component() {
                 className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border-slate-200 dark:border-slate-700 hover:bg-white/90 dark:hover:bg-slate-800/90 px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
                 <a
-                  href="https://www.linkedin.com/in/thomas-roethenbaugh-712b61149/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/projects"
                 >
                   <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-                  Here is my LinkedIn
+                  Here are my projects
                 </a>
               </Button>
             </motion.div>
