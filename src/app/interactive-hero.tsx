@@ -150,7 +150,7 @@ export default function Component() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white mb-6"
             >
-              Hi, my name is
+              Hi 👋 my name is
               <span className="block bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
                 Thomas Roethenbaugh
               </span>

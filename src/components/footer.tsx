@@ -26,7 +26,7 @@ export function Footer() {
     },
     {
       name: "Email",
-      href: "mailto:roethenbaughthomas@gmail.com",
+      href: "mailto:sleepingvulture568@gmail.com",
       icon: Mail,
       color: "hover:text-green-600 dark:hover:text-green-400",
     },

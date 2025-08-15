@@ -6,6 +6,7 @@ import { Moon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTheme } from "next-themes"
 
+// Hi there, person looking at this code :P
 export function Navigation() {
   const pathname = usePathname()
   const { theme, setTheme } = useTheme()
