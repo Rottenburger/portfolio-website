@@ -19,7 +19,7 @@ export default function CVPage() {
                 <div>
                   <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4">IT Analyst</h2>
                   <p className="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
-                  Final Year Computer Science Student (with integrated year in industry). Placement IT Analyst at G-Research for 1 year and 3 months providing technical support, system administration and cyber-security operations
+                  BSc First Class Hons Computer Science (with integrated year in industry) Placement year IT Analyst at G-Research for 1 year and 3 months providing technical support, system administration and cyber-security operations
                   </p>
                 </div>
 
@@ -31,7 +31,7 @@ export default function CVPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="w-4 h-4" />
-                    <span>Hertfordshire, UK</span>
+                    <span>United Kingdom</span>
                   </div>
                 </div>
 
@@ -90,10 +90,10 @@ export default function CVPage() {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-slate-600 dark:text-slate-300">
-                    <li>• Provided IT support and systems administration across a wide range of technologies, including PowerShell, Mimecast, CyberArk, VMWare, Citrix, and Cisco Meraki.</li>
-                    <li>• Completed engineering project tickets under the guidance of a senior IT engineer, such as developing an automated checking system for onboarding new joiners to ensure correct account and storage setup.</li>
-                    <li>• Gained hands-on experience in Linux system administration and engineering, expanding my knowledge of the operating system from a beginner level.</li>
-                    <li>• Took on additional responsibility for cyber security operations during a company restructuring, including handling email releases, download requests, and collaborating with the security investigation team on compromised or suspicious accounts.</li>
+                    <li>• Provided IT support and systems administration across a wide range of technologies, including PowerShell, Mimecast, CyberArk, VMWare, Citrix, and Cisco Meraki</li>
+                    <li>• Completed engineering project tickets under the guidance of a senior IT engineer, such as developing an automated checking system for onboarding new joiners to ensure correct account and storage setup</li>
+                    <li>• Gained hands-on experience in Linux system administration and engineering, expanding my knowledge of the operating system from a beginner level</li>
+                    <li>• Took on additional responsibility for cyber security operations during a company restructuring, including handling email releases, download requests, and collaborating with the security investigation team on compromised or suspicious accounts</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -110,10 +110,10 @@ export default function CVPage() {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-slate-600 dark:text-slate-300">
-                    <li>• Collaborated with a local start-up to support the development of an augmented reality art app.</li>
-                    <li>• Collected user feedback and data both online and in-person to assess reactions to the app and its concept.</li>
-                    <li>• Organised and securely managed survey responses and research data.</li>
-                    <li>• Created graphs and presentations to communicate findings to the manager and team members.</li>
+                    <li>• Collaborated with a local start-up to support the development of an augmented reality art app</li>
+                    <li>• Collected user feedback and data both online and in-person to assess reactions to the app and its concept</li>
+                    <li>• Organised and securely managed survey responses and research data</li>
+                    <li>• Created graphs and presentations to communicate findings to the manager and team members</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -130,9 +130,9 @@ export default function CVPage() {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-slate-600 dark:text-slate-300">
-                    <li>• Trained in all but one department, enabling flexible work assignments based on daily operational needs.</li>
-                    <li>• Frequently organised and guided less experienced colleagues in both the food and backdoor departments.</li>
-                    <li>• Developed strong customer service skills and learned to independently solve problems in a fast-paced environment.</li>
+                    <li>• Trained in all but one department, enabling flexible work assignments based on daily operational needs</li>
+                    <li>• Frequently organised and guided less experienced colleagues in both the food and backdoor departments</li>
+                    <li>• Developed strong customer service skills and learned to independently solve problems in a fast-paced environment</li>
                   </ul>
                 </CardContent>
               </Card>

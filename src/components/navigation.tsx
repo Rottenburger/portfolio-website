@@ -18,7 +18,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex-1 flex items-center">
           <Link href="/" className="text-xl font-bold bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">
-            Portfolio Website
+            My portfolio website
           </Link>
         </div>
 

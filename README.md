@@ -1,37 +1,91 @@
-# Overview
+# Portfolio Website (Next.js + Tailwind)
 
-This is a simple portfolio website using NextJS and TailwindCSS that I have created to show off my skills and experience. Hope you find it interesting! :D
+Overview
+--------
+This is a personal portfolio website built with Next.js and Tailwind CSS. It showcases work experience, projects, CV, and interactive UI components (including an interactive hero) with light/dark theming.
 
-## Features
+Recent changes
+-----------------------------------------
+- Project source moved under `src/` (app router structure).
+- Added a dedicated CV page under `/cv`.
+- Added a projects listing page under `/projects`.
+- Interactive hero component and theme provider for light/dark mode.
+- UI library components consolidated under `src/components/ui/` (badge, button, card, progress, sheet).
+- Utility helpers moved to `src/lib/utils.ts`.
+- Static assets live in `public/` (profile images, icons, svgs).
 
-* My work experience
-* My skills
-* My personal projects
-* Links to my GitHub & LinkedIn
+Features
+--------
+- Home / landing page with interactive hero
+- Projects listing and individual project pages (under `src/app/projects`)
+- CV page with downloadable CV
+- Theme provider (light / dark mode)
+- Reusable UI components (buttons, cards, badges, progress, sheets)
+- Responsive design using Tailwind CSS
+- Static assets and icons in `public/`
 
-## Project Structure
+Project structure (high level)
+------------------------------
+- src/
+  - app/
+    - globals.css
+    - layout.tsx
+    - page.tsx
+    - interactive-hero.tsx
+    - projects-page.tsx
+    - mainicon.jpg
+    - favicon.ico
+    - cv/
+      - page.tsx
+    - projects/
+      - page.tsx
+  - components/
+    - footer.tsx
+    - navigation.tsx
+    - theme-provider.tsx
+    - ui/
+      - badge.tsx
+      - button.tsx
+      - card.tsx
+      - progress.tsx
+      - sheet.tsx
+  - lib/
+    - utils.ts
+- public/
+  - profile.jpg / profile.png
+  - file.svg, globe.svg, next.svg, vercel.svg, window.svg
+- tailwind.config.ts (project Tailwind config)
+- next.config.mjs (Next.js config)
+- postcss.config.mjs
 
-The project is structured as follows:
+Development
+-----------
+1. Install dependencies
+   - npm install
+2. Run development server
+   - npm run dev
+   - Open http://localhost:3000
+3. Build for production
+   - npm run build
+4. Start production server (after build)
+   - npm start
 
-* `app/`: This is the main application code.
-	+ `layout.tsx`: This is the main layout of the application.
-	+ `page.tsx`: This is the main page of the application.
-* `components/`: This is where all of the individual components are stored.
-	+ `ui/`: This is where all of the UI components are stored.
-		- `Button.tsx`: This is the button component.
-		- `Link.tsx`: This is the link component.
-		- `Text.tsx`: This is the text component.
-	+ `grid.tsx`: This is the grid component.
-	+ `hero.tsx`: This is the hero component.
-	+ `spotlight.tsx`: This is the spotlight component.
-* `data/`: This is where all of the data for the application is stored.
-	+ `projects.ts`: This is the data for the projects page.
-	+ `skills.ts`: This is the data for the skills page.
-* `public/`: This is where all of the static assets are stored.
-* `tailwind.config.ts`: This is the tailwind configuration file.
-* `next.config.mjs`: This is the next configuration file.
-* `postcss.config.mjs`: This is the postcss configuration file.
+Notes
+-----
+- Styling is handled with Tailwind CSS; global styles are in `src/app/globals.css`.
+- The theme provider wraps the app to manage light/dark mode; check `src/components/theme-provider.tsx`.
+- Reusable UI elements are in `src/components/ui/`. Use them for consistent styling and behavior.
+- Static images and icons are in `public/`. Replace these with your own assets as needed.
 
-## Hosting / DevOps
+Deployment
+----------
+- This project is compatible with Vercel (recommended) but can be deployed to any Next.js-capable host.
+- Typical flow: push to Git, connect to Vercel, and it will build using the `build` script.
 
-This website is built using Vercel's front-end deployment framework
+Where to edit content
+---------------------
+- Home content and hero: `src/app/page.tsx` and `src/app/interactive-hero.tsx`
+- Projects list / project content: `src/app/projects/page.tsx`
+- CV page: `src/app/cv/page.tsx`
+- Shared components: `src/components/` and `src/components/ui/`
+- Helpers & data: `src/lib/utils.ts`
