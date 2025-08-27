@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+
 import Image from "next/image"
 import { Camera, MapPin, Calendar, X } from "lucide-react"
 import { useState, useEffect } from "react"
@@ -234,7 +234,7 @@ export default function HikingPhotosPage() {
               Photos
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              This page is dedicated to the many hiking photos I have taken over the years I've spent in Wales and the
+              This page is dedicated to the many hiking photos I have taken over the years I&apos;ve spent in Wales and the
               the Lake District. I used a Vercel Blob database to store the photos and then used Next.js to display them. Hope you enjoy!
             </p>
           </div>
