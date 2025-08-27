@@ -53,6 +53,16 @@ export function Navigation() {
           >
             Projects
           </Link>
+          <Link 
+            href="/hiking-photos" 
+            className={`transition-colors ${
+              isActive("/hiking-photos") 
+                ? "text-purple-600 font-medium" 
+                : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+            }`}
+          >
+            Hiking Photos
+          </Link>
         </nav>
 
         <div className="flex-1 flex items-center justify-end">
