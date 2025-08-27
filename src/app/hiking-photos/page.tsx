@@ -234,8 +234,8 @@ export default function HikingPhotosPage() {
               Photos
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              A collection of breathtaking moments captured during my hiking adventures across diverse landscapes. Each
-              photo tells a story of exploration, challenge, and natural beauty.
+              This page is dedicated to the many hiking photos I have taken over the years I've spent in Wales and the
+              the Lake District. I used a Vercel Blob database to store the photos and then used Next.js to display them. Hope you enjoy!
             </p>
           </div>
 
@@ -336,44 +336,27 @@ export default function HikingPhotosPage() {
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm">
               <div className="text-3xl font-bold text-purple-600 mb-2">{hikingPhotos.length}</div>
-              <div className="text-gray-600 dark:text-gray-300 font-medium">Photos Captured</div>
+              <div className="text-gray-600 dark:text-gray-300 font-medium">Photos in Database</div>
             </div>
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm">
-              <div className="text-3xl font-bold text-purple-600 mb-2">15+</div>
-              <div className="text-gray-600 dark:text-gray-300 font-medium">States Explored</div>
+              <div className="text-3xl font-bold text-purple-600 mb-2">3</div>
+              <div className="text-gray-600 dark:text-gray-300 font-medium">Countries Hiked</div>
             </div>
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm">
               <div className="text-3xl font-bold text-purple-600 mb-2">500+</div>
               <div className="text-gray-600 dark:text-gray-300 font-medium">Miles Hiked</div>
             </div>
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm">
-              <div className="text-3xl font-bold text-purple-600 mb-2">50+</div>
+              <div className="text-3xl font-bold text-purple-600 mb-2">30+</div>
               <div className="text-gray-600 dark:text-gray-300 font-medium">Peaks Summited</div>
             </div>
           </div>
 
-          {/* Call to Action */}
-          <div className="text-center mt-20">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Want to see more adventures?</h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              Follow my hiking journey on social media for real-time updates, trail tips, and behind-the-scenes moments
-              from my outdoor adventures.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/cv"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-purple-600 text-white font-medium hover:bg-purple-700 transition-colors"
-              >
-                View My CV
-              </Link>
-              <Link
-                href="/projects"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
-              >
-                View My Projects
-              </Link>
-            </div>
-          </div>
+          {/* Footer */}
+          <footer className="text-center py-8 border-t">
+            <p className="text-slate-600">© 2025 Thomas Roethenbaugh</p>
+          </footer>
+
         </main>
       </div>
 
