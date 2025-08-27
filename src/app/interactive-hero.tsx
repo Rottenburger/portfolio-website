@@ -21,25 +21,34 @@ function InteractiveGeometry({ mousePosition }: { mousePosition: { x: number; y:
       // Smooth rotation based on mouse position
       meshRef.current.rotation.x = THREE.MathUtils.lerp(meshRef.current.rotation.x, mousePosition.y * 0.3, 0.05)
       meshRef.current.rotation.y = THREE.MathUtils.lerp(meshRef.current.rotation.y, mousePosition.x * 0.3, 0.05)
+
+      // Gentle floating animation
+      groupRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.2
     }
   })
 
   return (
     <group ref={groupRef}>
-      <mesh ref={meshRef} position={[2, 0, 0]}>
-        <icosahedronGeometry args={[1, 0]} />
-        <meshStandardMaterial color="#6366f1" wireframe transparent opacity={0.8} />
-      </mesh>
+      <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
+        <mesh ref={meshRef} position={[2, 0, 0]}>
+          <icosahedronGeometry args={[1, 0]} />
+          <meshStandardMaterial color="#6366f1" wireframe transparent opacity={0.6} />
+        </mesh>
+      </Float>
 
-      <mesh position={[-2, 1, -1]}>
-        <octahedronGeometry args={[0.8, 0]} />
-        <meshStandardMaterial color="#8b5cf6" wireframe transparent opacity={0.7} />
-      </mesh>
+      <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.3}>
+        <mesh position={[-2, 1, -1]}>
+          <octahedronGeometry args={[0.8, 0]} />
+          <meshStandardMaterial color="#8b5cf6" wireframe transparent opacity={0.4} />
+        </mesh>
+      </Float>
 
-      <mesh position={[0, -1, 1]}>
-        <tetrahedronGeometry args={[0.6, 0]} />
-        <meshStandardMaterial color="#06b6d4" wireframe transparent opacity={0.6} />
-      </mesh>
+      <Float speed={2.5} rotationIntensity={0.4} floatIntensity={0.6}>
+        <mesh position={[0, -1, 1]}>
+          <tetrahedronGeometry args={[0.6, 0]} />
+          <meshStandardMaterial color="#06b6d4" wireframe transparent opacity={0.5} />
+        </mesh>
+      </Float>
     </group>
   )
 }
@@ -58,12 +67,12 @@ function ParticleField({ mousePosition }: { mousePosition: { x: number; y: numbe
 
   useFrame((state) => {
     if (pointsRef.current) {
-      // Very subtle, smooth rotation based on mouse position
-      const targetRotationX = mousePosition.y * 0.01
-      const targetRotationY = mousePosition.x * 0.01
-      
-      pointsRef.current.rotation.x = THREE.MathUtils.lerp(pointsRef.current.rotation.x, targetRotationX, 0.01)
-      pointsRef.current.rotation.y = THREE.MathUtils.lerp(pointsRef.current.rotation.y, targetRotationY, 0.01)
+      pointsRef.current.rotation.x = mousePosition.y * 0.1
+      pointsRef.current.rotation.y = mousePosition.x * 0.1
+
+      // Gentle pulsing effect
+      const scale = 1 + Math.sin(state.clock.elapsedTime) * 0.1
+      pointsRef.current.scale.setScalar(scale)
     }
   })
 
@@ -72,7 +81,7 @@ function ParticleField({ mousePosition }: { mousePosition: { x: number; y: numbe
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial size={0.03} color="#ffffff" transparent opacity={0.8} sizeAttenuation />
+      <pointsMaterial size={0.02} color="#94a3b8" transparent opacity={0.6} sizeAttenuation />
     </points>
   )
 }
@@ -82,9 +91,9 @@ function Scene({ mousePosition, isDark }: { mousePosition: { x: number; y: numbe
   return (
     <>
       <Environment preset={isDark ? "night" : "studio"} />
-      <ambientLight intensity={isDark ? 0.4 : 0.5} />
-      <pointLight position={[10, 10, 10]} intensity={isDark ? 1.2 : 1} />
-      <pointLight position={[-10, -10, -10]} intensity={0.8} color={isDark ? "#a855f7" : "#8b5cf6"} />
+      <ambientLight intensity={isDark ? 0.3 : 0.5} />
+      <pointLight position={[10, 10, 10]} intensity={isDark ? 0.8 : 1} />
+      <pointLight position={[-10, -10, -10]} intensity={0.5} color={isDark ? "#a855f7" : "#8b5cf6"} />
 
       <InteractiveGeometry mousePosition={mousePosition} />
       <ParticleField mousePosition={mousePosition} />
