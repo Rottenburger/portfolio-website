@@ -1,7 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Camera, MapPin, Calendar } from "lucide-react"
+import Image from "next/image"
+import { Camera, MapPin, Calendar, X } from "lucide-react"
 import { useState, useEffect } from "react"
 import { Navigation } from "@/components/navigation"
 import { BlobPhoto } from "@/lib/blob-utils"
@@ -33,15 +34,15 @@ function mapBlobToHikingPhoto(blobPhoto: BlobPhoto, index: number): HikingPhoto 
   
   // Determine category based on filename or default to "Trails"
   let category = "Trails"
-  if (filename.includes("peak") || filename.includes("mountain") || filename.includes("summit")) {
+  if (filename.includes("peak") || filename.includes("mountain") || filename.includes("summit") || filename.includes("cadair") || filename.includes("snowdon") || filename.includes("fan") || filename.includes("tryfan") || filename.includes("skiddaw")) {
     category = "Peaks"
-  } else if (filename.includes("lake") || filename.includes("water")) {
+  } else if (filename.includes("lake") || filename.includes("water") || filename.includes("llyn") || filename.includes("elan")) {
     category = "Lakes"
-  } else if (filename.includes("canyon") || filename.includes("valley")) {
+  } else if (filename.includes("canyon") || filename.includes("valley") || filename.includes("cwm") || filename.includes("dinas")) {
     category = "Canyons"
-  } else if (filename.includes("waterfall") || filename.includes("cascade")) {
+  } else if (filename.includes("waterfall") || filename.includes("cascade") || filename.includes("pistyll") || filename.includes("swallow") || filename.includes("aber") || filename.includes("sgwd")) {
     category = "Waterfalls"
-  } else if (filename.includes("coast") || filename.includes("ocean") || filename.includes("beach")) {
+  } else if (filename.includes("coastal") || filename.includes("coast") || filename.includes("aberystwyth") || filename.includes("pembrokeshire") || filename.includes("anglesey") || filename.includes("llyn peninsula")) {
     category = "Coastal"
   } else if (filename.includes("glacier") || filename.includes("ice")) {
     category = "Glaciers"
@@ -121,6 +122,7 @@ export default function HikingPhotosPage() {
   const [hikingPhotos, setHikingPhotos] = useState<HikingPhoto[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [selectedPhoto, setSelectedPhoto] = useState<HikingPhoto | null>(null)
 
   useEffect(() => {
     async function fetchHikingPhotos() {
@@ -152,6 +154,33 @@ export default function HikingPhotosPage() {
 
   const filteredPhotos =
     selectedCategory === "All" ? hikingPhotos : hikingPhotos.filter((photo) => photo.category === selectedCategory)
+
+  const openModal = (photo: HikingPhoto) => {
+    setSelectedPhoto(photo)
+    document.body.style.overflow = 'hidden' // Prevent background scrolling
+  }
+
+  const closeModal = () => {
+    setSelectedPhoto(null)
+    document.body.style.overflow = 'unset' // Restore scrolling
+  }
+
+  // Close modal on escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeModal()
+      }
+    }
+
+    if (selectedPhoto) {
+      document.addEventListener('keydown', handleEscape)
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [selectedPhoto])
 
   if (loading) {
     return (
@@ -247,15 +276,22 @@ export default function HikingPhotosPage() {
                   className="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer"
                   onMouseEnter={() => setHoveredPhoto(photo.id)}
                   onMouseLeave={() => setHoveredPhoto(null)}
+                  onClick={() => openModal(photo)}
                 >
-                  {/* Photo Container */}
+                  {/* Photo Container with Next.js Image */}
                   <div className="relative overflow-hidden rounded-2xl">
-                    <img
-                      src={photo.image}
-                      alt={photo.title}
-                      className="w-full h-64 object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                      loading="lazy"
-                    />
+                    <div className="relative w-full h-64">
+                      <Image
+                        src={photo.image}
+                        alt={photo.title}
+                        fill
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        quality={85}
+                        priority={false}
+                        loading="lazy"
+                      />
+                    </div>
 
                     {/* Overlay on Hover */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -340,6 +376,52 @@ export default function HikingPhotosPage() {
           </div>
         </main>
       </div>
+
+      {/* Full-Screen Modal */}
+      {selectedPhoto && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+          onClick={closeModal}
+        >
+          <div className="relative max-w-7xl max-h-[90vh] mx-4">
+            {/* Close Button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+              aria-label="Close modal"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Photo Container */}
+            <div className="relative w-full h-full">
+              <Image
+                src={selectedPhoto.image}
+                alt={selectedPhoto.title}
+                width={1200}
+                height={800}
+                className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
+                quality={95}
+                priority
+              />
+            </div>
+
+            {/* Photo Info */}
+            <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-sm rounded-lg p-4 text-white">
+              <h3 className="text-xl font-bold mb-2">{selectedPhoto.title}</h3>
+              <div className="flex items-center text-sm text-white/90 mb-1">
+                <MapPin className="w-4 h-4 mr-2" />
+                {selectedPhoto.location}
+              </div>
+              <div className="flex items-center text-sm text-white/90 mb-2">
+                <Calendar className="w-4 h-4 mr-2" />
+                {selectedPhoto.date}
+              </div>
+              <p className="text-sm text-white/80">{selectedPhoto.description}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   )
 }
