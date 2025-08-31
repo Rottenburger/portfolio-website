@@ -6,9 +6,11 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
+// What are you doing here? :P
+// If you're looking for the source code, it's on GitHub
 export const metadata: Metadata = {
   title: "Thomas Roethenbaugh",
-  description: "Hi there! This is my portfolio website showcasing my projects and skills with some cool 3D effects and animations",
+  description: "Hi there! This is my portfolio website showcasing my project, programing skills and hiking photos with some 3D effects and animations",
 }
 
 export default function RootLayout({
