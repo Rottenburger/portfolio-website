@@ -27,7 +27,7 @@ export default function CVPage() {
                 <div className="flex flex-wrap gap-4 text-slate-600 dark:text-slate-300">
                   <div className="flex items-center gap-2">
                     <Mail className="w-4 h-4" />
-                    <span>roethenbaughthomas@gmail.com</span>
+                    <span>*************@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="w-4 h-4" />
